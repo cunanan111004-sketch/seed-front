@@ -123,6 +123,11 @@ update.addEventListener('click',()=>{
     let id=document.querySelector("#ID").value;
     let formData={sname,rarity,stock,price,gems,id};
 
+    if(!sname || !rarity || !stock || !price || !gems){
+      alert("Please select seed first!")
+      return;
+    }
+    
     fetch(`https://seed-back-3.onrender.com/api/seeds/`,{
         method:'PUT',
         body: JSON.stringify(formData),
