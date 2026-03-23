@@ -15,6 +15,7 @@
     --rare-color: #00e5ff;
     --epic-color: #ce93d8;
     --legendary-color: #ffd740;
+    --mythical-color: #ffd740;
     --common-color: #a5d6a7;
 
     /* Card brown theme (matching screenshot) */
@@ -327,6 +328,7 @@ h1 {
 .rarity-rare      { background: #01579b; color: var(--rare-color); border-color: #0288d1; }
 .rarity-epic      { background: #6a1b9a; color: var(--epic-color); border-color: #9c27b0; }
 .rarity-legendary { background: #bf360c; color: var(--legendary-color); border-color: #e64a19; }
+.rarity-mythical  { background: #bf360c; color: var(--mythical-color); border-color: #e64a19; }
 
 /* Stock count (the "2x" in screenshot) */
 .stock-label {
