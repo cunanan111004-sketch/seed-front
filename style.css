@@ -329,8 +329,8 @@ h1 {
 .rarity-epic      { background: #6a1b9a; color: var(--epic-color); border-color: #9c27b0; }
 .rarity-legendary { background: #bf360c; color: var(--legendary-color); border-color: #e64a19; }
 .rarity-mythical  { background: #d32f2f; color: #fff; border-color: #b71c1c; }
-.rarity-secret    { background: #e64a19; color: #fff; border-color: #bf360c; }
 .rarity-divine    { background: #1a1a1a; color: #e0e0e0; border-color: #424242; }
+.rarity-secret    { background: linear-gradient(135deg, #00e5ff 0%, #00bcd4 100%); color: #fff; border-color: #0088a3; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); font-weight: 900; }
 
 /* Stock count (the "2x" in screenshot) */
 .stock-label {
