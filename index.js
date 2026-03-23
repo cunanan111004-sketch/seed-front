@@ -11,6 +11,11 @@ submit.addEventListener('click',()=>{
     let gems=document.querySelector("#gem").value;
     let formData={sname,rarity,stock,price,gems};
 
+    if(!sname || !rarity || !stock || !price || !gems){
+      alert("Please fill all required fields!")
+      return;
+    }
+    
     fetch("https://seed-back-3.onrender.com/api/seeds",{
         method:'POST',
         body: JSON.stringify(formData),
