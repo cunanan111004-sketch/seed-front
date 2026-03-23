@@ -11,7 +11,7 @@ submit.addEventListener('click',()=>{
     let gems=document.querySelector("#gem").value;
     let formData={sname,rarity,stock,price,gems};
 
-    fetch("http://localhost:3306/api/seeds",{
+    fetch("https://seed-back-3.onrender.com/api/seeds",{
         method:'POST',
         body: JSON.stringify(formData),
         headers:{
@@ -38,7 +38,7 @@ function getrarityClass(rarity) {
 function getSeeds(){
     let html=""
     //FETCH API
-    fetch('http://localhost:3306/api/seeds',{mode:'cors'})
+    fetch('https://seed-back-3.onrender.com/api/seeds',{mode:'cors'})
     .then(response=>{
         console.log(response);
         return response.json();
@@ -77,7 +77,7 @@ function getSeeds(){
 // Delete
 function deleteSeed(id){
     if(confirm("Are you sure you want to delete this Seed?")){
-        fetch(`http://localhost:3306/api/seeds/`,{
+        fetch(`https://seed-back-3.onrender.com/api/seeds/`,{
             method:'DELETE',
             body: JSON.stringify({id}),
             headers:{
@@ -95,7 +95,7 @@ function deleteSeed(id){
 
 //Update
 function updateSeed(id){
-    fetch(`http://localhost:3306/api/seeds/${id}`,)
+    fetch(`https://seed-back-3.onrender.com/api/seeds/${id}`,)
     .then(response=> response.json())
     .then(data=>{
         document.querySelector("#seedname").value=data[0].seed_name;
@@ -118,7 +118,7 @@ update.addEventListener('click',()=>{
     let id=document.querySelector("#ID").value;
     let formData={sname,rarity,stock,price,gems,id};
 
-    fetch(`http://localhost:3306/api/seeds/`,{
+    fetch(`https://seed-back-3.onrender.com/api/seeds/`,{
         method:'PUT',
         body: JSON.stringify(formData),
         headers:{
