@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seed Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Seed Shop</h1>
+
+    <div id="container">
+
+        <!-- FORM PANEL -->
+        <div id="form-panel">
+            <h2>Add / Edit Seed</h2>
+
+            <div class="form-group">
+                <label>Seed Name</label>
+                <input type="text" id="seedname" placeholder="e.g. Cactus Seed">
+            </div>
+
+            <div class="form-group">
+                <label>Rarity</label>
+                <select id="rare">
+                    <option value="Common">Common</option>
+                    <option value="Rare">Rare</option>
+                    <option value="Epic">Epic</option>
+                    <option value="Legendary">Legendary</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Stock</label>
+                <input type="number" id="stck" placeholder="e.g. 4" min="0">
+            </div>
+
+            <div class="form-group">
+                <label>Price ($)</label>
+                <input type="number" id="prc" placeholder="e.g. 200" min="0">
+            </div>
+
+            <div class="form-group">
+                <label>Gems</label>
+                <input type="number" id="gem" placeholder="e.g. 2" min="0">
+            </div>
+
+            <input type="hidden" id="ID">
+
+            <div class="btn-row">
+                <button class="game-btn btn-add" id="add">Add Seed</button>
+                <button class="game-btn btn-update" id="update">Update</button>
+            </div>
+        </div>
+
+        <!-- SEED LIST -->
+        <div id="list-panel">
+            <h2>Seed Stock</h2>
+            <ul id="content">
+                <li class="empty-state">No seeds in stock yet...</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

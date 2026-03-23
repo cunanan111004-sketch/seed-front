@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+    --gold: #f5c518;
+    --gold-dark: #d4a017;
+    --gold-light: #ffe566;
+    --green-btn: #4caf50;
+    --green-btn-dark: #388e3c;
+    --pink-btn: #e040fb;
+    --pink-btn-dark: #ab00d6;
+    --cyan-btn: #00bcd4;
+    --cyan-btn-dark: #0088a3;
+    --red-btn: #f44336;
+    --red-btn-dark: #b71c1c;
+    --rare-color: #00e5ff;
+    --epic-color: #ce93d8;
+    --legendary-color: #ffd740;
+    --common-color: #a5d6a7;
+
+    /* Card brown theme (matching screenshot) */
+    --card-bg: #6b3a2a;
+    --card-bg-dark: #4a2518;
+    --card-border: #8b5a3a;
+    --card-border-dark: #3a1a0a;
+    --card-texture: #7a4530;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: radial-gradient(ellipse at 60% 30%, #2e6b2e 0%, #1a3a1a 60%, #0d200d 100%);
+    min-height: 100vh;
+    color: #fff;
+    padding: 24px 12px 40px;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, rgba(255, 230, 100, 0.18) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 60px 60px, 35px 35px;
+    background-position: 0 0, 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+    animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from { opacity: 0.6; }
+    to { opacity: 1; }
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    text-align: center;
+    font-size: 2.4rem;
+    color: var(--gold-light);
+    text-shadow: 0 0 16px var(--gold), 3px 3px 0 #7a5800, 0 4px 24px rgba(255, 200, 0, 0.5);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 28px;
+}
+
+/* ===================== LAYOUT ===================== */
+#container {
+    display: flex;
+    gap: 28px;
+    max-width: 1020px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ===================== FORM PANEL ===================== */
+#form-panel {
+    background: linear-gradient(160deg, rgba(30, 70, 30, 0.95) 0%, rgba(10, 40, 10, 0.98) 100%);
+    border: 3px solid var(--gold-dark);
+    border-radius: 18px;
+    box-shadow: 0 0 0 2px #7a5800, 0 8px 40px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 220, 80, 0.15);
+    padding: 24px 22px 22px;
+    min-width: 260px;
+    flex: 0 0 280px;
+}
+
+#form-panel h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    text-shadow: 0 0 8px var(--gold);
+    text-align: center;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 2px solid var(--gold-dark);
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 700;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 8px rgba(255, 220, 80, 0.4);
+}
+
+.form-group select option {
+    background: #1a3a1a;
+    color: #fff;
+}
+
+.btn-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+/* ===================== BUTTONS ===================== */
+.game-btn {
+    flex: 1;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 6px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.1s, filter 0.1s;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.game-btn:active {
+    transform: translateY(2px);
+    filter: brightness(0.9);
+}
+
+.btn-add {
+    background: linear-gradient(180deg, #6ed672 0%, var(--green-btn) 50%, var(--green-btn-dark) 100%);
+    box-shadow: 0 4px 0 #1b5e20, 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.btn-add:hover { filter: brightness(1.1); }
+
+.btn-update {
+    background: linear-gradient(180deg, #ffca28 0%, #ffa000 50%, #e65100 100%);
+    box-shadow: 0 4px 0 #bf360c, 0 6px 16px rgba(255, 160, 0, 0.4);
+}
+
+.btn-update:hover { filter: brightness(1.1); }
+
+/* ===================== SEED LIST ===================== */
+#list-panel {
+    flex: 1;
+    min-width: 320px;
+}
+
+#list-panel h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    text-shadow: 0 0 8px var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+
+#content {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ===================== SEED CARD (Game Shop Style) ===================== */
+.employee-item {
+    background: linear-gradient(160deg, #7a4530 0%, var(--card-bg) 40%, var(--card-bg-dark) 100%);
+    border-radius: 14px;
+    border: 3px solid var(--card-border);
+    box-shadow:
+        0 4px 0 var(--card-border-dark),
+        0 8px 24px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(255, 200, 150, 0.15);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    animation: cardIn 0.3s ease both;
+}
+
+/* Subtle wood-grain texture overlay */
+.employee-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(
+            92deg,
+            transparent 0px,
+            rgba(0,0,0,0.04) 1px,
+            transparent 2px,
+            transparent 18px
+        ),
+        radial-gradient(ellipse at 70% 20%, rgba(200, 120, 60, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    border-radius: 11px;
+}
+
+@keyframes cardIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---- Top section: icon + info ---- */
+.card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px 10px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Seed icon box — dark square like in screenshot */
+.seed-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #2a1a10, #3d2515);
+    border: 2px solid #5a3520;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    flex-shrink: 0;
+    box-shadow:
+        inset 0 2px 8px rgba(0,0,0,0.5),
+        0 2px 6px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.seed-icon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 35% 30%, rgba(255,200,100,0.12) 0%, transparent 65%);
+}
+
+/* Right side info */
+.employee-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Name + rarity row */
+.seed-title-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.seed-name {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.5), 0 0 10px rgba(255,200,0,0.3);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+/* Rarity badge — pill style matching screenshot */
+.rarity-badge {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.rarity-common    { background: #2e7d32; color: #b9f6ca; border-color: #43a047; }
+.rarity-rare      { background: #01579b; color: var(--rare-color); border-color: #0288d1; }
+.rarity-epic      { background: #6a1b9a; color: var(--epic-color); border-color: #9c27b0; }
+.rarity-legendary { background: #bf360c; color: var(--legendary-color); border-color: #e64a19; }
+
+/* Stock count (the "2x" in screenshot) */
+.stock-label {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #f0c080;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stock-label::before {
+    content: '⭐';
+    font-size: 0.75rem;
+}
+
+/* Price + gems row */
+.price-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2px;
+}
+
+/* Green price pill like "$100" in screenshot */
+.price-tag {
+    background: linear-gradient(180deg, #66bb6a 0%, #388e3c 100%);
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    padding: 3px 14px;
+    border-radius: 8px;
+    box-shadow: 0 3px 0 #1b5e20;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    min-width: 64px;
+    text-align: center;
+}
+
+/* Purple gems pill */
+.gem-tag {
+    background: linear-gradient(180deg, #ce93d8 0%, #ab00d6 100%);
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    padding: 3px 12px;
+    border-radius: 8px;
+    box-shadow: 0 3px 0 #6a0090;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.gem-tag::before {
+    content: '💎';
+    font-size: 0.8rem;
+}
+
+/* Tiny ID label */
+.id-label {
+    font-size: 0.68rem;
+    color: rgba(240, 180, 100, 0.55);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 1px;
+}
+
+/* ---- Bottom action bar (Buy / Info style from screenshot) ---- */
+.action-buttons {
+    display: flex;
+    gap: 0;
+    border-top: 2px solid rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.btn-edit {
+    flex: 1;
+    background: linear-gradient(180deg, #66bb6a 0%, var(--green-btn) 50%, var(--green-btn-dark) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0 0 0 10px;
+    padding: 10px 8px;
+    cursor: pointer;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    letter-spacing: 0.5px;
+    transition: filter 0.15s, transform 0.1s;
+    border-right: 1px solid rgba(0,0,0,0.25);
+}
+
+.btn-edit:hover  { filter: brightness(1.12); }
+.btn-edit:active { transform: translateY(1px); filter: brightness(0.9); }
+
+.btn-delete {
+    flex: 1;
+    background: linear-gradient(180deg, #f06292 0%, var(--red-btn) 50%, var(--red-btn-dark) 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+    color: #fff;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0 0 10px 0;
+    padding: 10px 8px;
+    cursor: pointer;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    letter-spacing: 0.5px;
+    transition: filter 0.15s, transform 0.1s;
+}
+
+.btn-delete:hover  { filter: brightness(1.12); }
+.btn-delete:active { transform: translateY(1px); filter: brightness(0.9); }
+
+/* ===================== EMPTY STATE ===================== */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: rgba(255, 220, 80, 0.5);
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 640px) {
+    h1 { font-size: 1.7rem; }
+
+    #container {
+        flex-direction: column;
+    }
+
+    #form-panel {
+        flex: unset;
+        width: 100%;
+    }
+
+    .card-top {
+        flex-wrap: wrap;
+    }
+
+    .action-buttons {
+        flex-direction: row;
+    }
+
+    .btn-edit { border-radius: 0 0 0 10px; }
+    .btn-delete { border-radius: 0 0 10px 0; }
+}
